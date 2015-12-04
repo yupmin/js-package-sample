@@ -4,9 +4,9 @@
   "description": "Javascript Package Sample",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests",
-    "test-travis": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
-    "build": "./node_modules/.bin/grunt"
+    "test": "`npm bin`/mocha test",
+    "test-travis": "`npm bin`/istanbul cover `npm bin`/_mocha -- -R spec ./test/*",
+    "build": "`npm bin`/grunt"
   },
   "keywords": [
     "test"

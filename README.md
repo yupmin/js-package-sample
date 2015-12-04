@@ -1,4 +1,4 @@
-# JS Package Sample [![Build Status](https://travis-ci.org/yupmin/js-package-sample.svg?branch=master)](https://travis-ci.org/yupmin/js-package-sample)
+# JS Package Sample [![Build Status](https://travis-ci.org/yupmin/js-package-sample.svg?branch=master)](https://travis-ci.org/yupmin/js-package-sample) [![Coverage Status](https://coveralls.io/repos/yupmin/js-package-sample/badge.svg?branch=master&service=github)](https://coveralls.io/github/yupmin/js-package-sample?branch=master)
 
 For web component development, sample package
 

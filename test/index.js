@@ -1,7 +1,7 @@
 if (typeof module !== 'undefined' && module.exports) { // Node.js
     var expect = require('chai').expect;
     var sinon = require('sinon');
-    var JsPackageSample = require('../src/index.js');
+    var JsPackageSample = require('../src/index');
 
     var jsdom = require('jsdom');
     var window = jsdom.jsdom('<html><head></head><body>hello world</body></html>').defaultView;

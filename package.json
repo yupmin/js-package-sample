@@ -1,0 +1,43 @@
+{
+  "name": "js-package-sample",
+  "version": "0.0.1",
+  "description": "Javascript Package Sample",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests",
+    "test-travis": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
+    "build": "./node_modules/.bin/grunt"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "yupmin@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yupmin/js-package-sample.git"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "coveralls": "*",
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-simple-mocha": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-header": "*",
+    "gulp-jshint": "*",
+    "gulp-mocha": "*",
+    "gulp-rimraf": "*",
+    "gulp-uglify": "*",
+    "istanbul": "*",
+    "jsdom": "*",
+    "mocha": "*",
+    "sinon": "*"
+  }
+}

@@ -1,4 +1,4 @@
-# JS Package Sample
+# JS Package Sample [![Build Status](https://travis-ci.org/yupmin/js-package-sample.svg?branch=master)](https://travis-ci.org/yupmin/js-package-sample)
 
 For web component development, sample package
 

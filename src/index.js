@@ -1,41 +1,26 @@
-(function (window, undefined) {
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
+        root.JsPackageSample = factory(root.jQuery);
+    }
+}(this, function (jQuery) {
     'use strict';
 
-    var JsPackageSample = function () {
+    var userAgent;
 
-        var userAgent;
+    return {
+        getUserAgent: function() {
+            return userAgent;
+        },
 
-        if (!(this instanceof JsPackageSample)) {
-            return new JsPackageSample();
+        setUserAgent: function(ua) {
+            userAgent = ua;
         }
-
-        this.setUserAgent = function(userAgent) {
-            this.userAgent = userAgent || navigator.userAgent;
-        };
-
-        this.getUserAgent = function () {
-            return this.userAgent;
-        };
-
-        return this;
     };
-
-    // check js environment
-    if (typeof exports  !== 'undefined') {
-        // nodejs env
-        if (typeof module !== 'undefined' && module.exports) {
-            exports = module.exports = JsPackageSample;
-        }
-        exports.JsPackageSample = JsPackageSample;
-    } else {
-        // requirejs env (optional)
-        if (typeof define  === 'function' && define.amd) {
-            define(function () {
-                return JsPackageSample;
-            });
-        } else {
-            // browser env
-            window.JsPackageSample = JsPackageSample;
-        }
-    }
-})(typeof window === 'object' ? window : this);
+}));

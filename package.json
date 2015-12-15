@@ -1,6 +1,6 @@
 {
   "name": "js-package-sample",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Javascript Package Sample",
   "main": "src/index.js",
   "scripts": {
@@ -39,5 +39,8 @@
     "jsdom": "*",
     "mocha": "*",
     "sinon": "*"
+  },
+  "dependencies": {
+    "jquery": "*"
   }
 }

@@ -26,22 +26,36 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'node_modules/mocha/',
+                        src: ['mocha.js'],
+                        dest: 'public/assets/js',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/mocha/',
+                        src: ['mocha.css'],
+                        dest: 'public/assets/css',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/mocha/',
                         src: ['mocha.*'],
-                        dest: 'public/assets/',
+                        dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/chai/',
                         src: ['chai.js'],
-                        dest: 'public/assets/',
+                        dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/sinon/pkg',
                         src: ['sinon.js'],
-                        dest: 'public/assets/',
+                        dest: 'public/assets/js',
                         filter: 'isFile'
                     }
                 ]
@@ -88,7 +102,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['gruntfile.js', 'src/*.js', 'test/**/*.js'],
-                tasks: ['development']
+                tasks: ['jshint', 'simplemocha']
             }
         },
         clean: {
@@ -108,7 +122,7 @@ module.exports = function(grunt) {
         ['jshint', 'simplemocha', 'copy', 'concat', 'uglify']
     );
 
-    grunt.registerTask('watch', ['jshint', 'simplemocha']);
+    // grunt.registerTask('watch', ['jshint', 'simplemocha']);
 
     grunt.registerTask('test', ['simplemocha']);
 

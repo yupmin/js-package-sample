@@ -45,14 +45,20 @@ gulp.task('test', function() {
 });
 
 gulp.task('copy', function() {
-    gulp.src(['node_modules/mocha/mocha.*'])
-        .pipe(gulp.dest('public/assets'));
+    gulp.src(['node_modules/mocha/mocha.js'])
+        .pipe(gulp.dest('public/assets/js'));
+
+    gulp.src(['node_modules/mocha/mocha.css'])
+        .pipe(gulp.dest('public/assets/css'));
 
     gulp.src(['node_modules/chai/chai.js'])
-        .pipe(gulp.dest('public/assets'));
+        .pipe(gulp.dest('public/assets/js'));
 
     gulp.src(['node_modules/sinon/pkg/sinon.js'])
-        .pipe(gulp.dest('public/assets'));
+        .pipe(gulp.dest('public/assets/js'));
+
+    gulp.src(['node_modules/jquery/dist/jquery.js'])
+        .pipe(gulp.dest('public/assets/js'));
 });
 
 gulp.task('concat', function () {
@@ -84,4 +90,5 @@ gulp.task('watch', function () {
 
 gulp.task('build', ['concat', 'uglify']);
 
-gulp.task('default', ['jshint:dev', 'jshint:app', 'test', 'copy', 'concat', 'uglify']);
+gulp.task('default', ['jshint:dev', 'jshint:app', 'test', 'copy', 'concat',
+        'uglify']);

@@ -21,11 +21,11 @@ For web component development, sample package
 ### Default
 
 ```bash
-gulp
+gulp [command]
 ```
 or
 ```bash
-grunt
+grunt [command]
 ```
 ### Command
   - watch

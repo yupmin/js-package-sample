@@ -69,7 +69,7 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: ['src/**/*.js'],
-                    dest: 'build/<%= pkg.name %>.js'
+                    dest: 'dist/<%= pkg.name %>.js'
                 }]
             }
         },
@@ -79,8 +79,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'build/<%= pkg.name %>.min.js': [
-                        'build/<%= pkg.name %>.js'
+                    'dist/<%= pkg.name %>.min.js': [
+                        'dist/<%= pkg.name %>.js'
                     ]
                 }
             }
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            build: ['./build/']
+            build: ['dist/']
         }
     });
 

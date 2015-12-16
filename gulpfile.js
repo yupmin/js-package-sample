@@ -65,7 +65,7 @@ gulp.task('concat', function () {
     gulp.src(['src/*.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('uglify', function() {
@@ -73,11 +73,11 @@ gulp.task('uglify', function() {
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(concat(pkg.name + '.min.js'))
-        .pipe(gulp.dest('build/'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', function() {
-    gulp.src('build', { read: false }) // much faster
+    gulp.src('dist', { read: false }) // much faster
         .pipe(rimraf());
 });
 

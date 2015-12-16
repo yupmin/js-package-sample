@@ -1,12 +1,13 @@
 {
   "name": "js-package-sample",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript Package Sample",
-  "main": "src/index.js",
+  "main": "dist/js-package-sample.js",
   "scripts": {
     "test": "`npm bin`/mocha test",
     "test-travis": "`npm bin`/istanbul cover `npm bin`/_mocha -- -R spec ./test/*",
-    "build": "`npm bin`/grunt"
+    "build": "`npm bin`/grunt",
+    "clean": "`npm bin`/grunt clean"
   },
   "keywords": [
     "test"
@@ -21,6 +22,7 @@
     "chai": "*",
     "coveralls": "*",
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",

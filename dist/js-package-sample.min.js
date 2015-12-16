@@ -3,7 +3,7 @@
  * js-package-sample - Javascript Package Sample
  * Built on 2015-12-16
  * 
- * @version 0.0.4
+ * @version 0.0.5
  * @link https://github.com/yupmin/js-package-sample.git
  * @license MIT
  */

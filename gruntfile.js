@@ -25,28 +25,28 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
+                        cwd: 'node_modules/mocha',
                         src: ['mocha.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
+                        cwd: 'node_modules/mocha',
                         src: ['mocha.css'],
                         dest: 'public/assets/css',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
-                        src: ['mocha.*'],
+                        cwd: 'node_modules/jquery/dist',
+                        src: ['jquery.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/chai/',
+                        cwd: 'node_modules/chai',
                         src: ['chai.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'

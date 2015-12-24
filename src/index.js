@@ -13,7 +13,7 @@
     'use strict';
 
     var userAgent,
-        repeaterId;
+        repeater;
 
     return {
         getUserAgent: function() {
@@ -35,11 +35,11 @@
         },
 
         getRepeaterId: function() {
-            return repeaterId;
+            return repeater;
         },
 
         repeaterGetUserAgent: function(cb) {
-            repeaterId = setInterval(function(self) {
+            repeater = setInterval(function(self) {
                 try {
                     cb(null, self.getUserAgent());
                 } catch (err) {

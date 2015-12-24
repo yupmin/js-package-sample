@@ -1,20 +1,3 @@
-var expect;
-
-if (typeof module !== 'undefined' && module.exports) { // Node.js
-    var sinon = require('sinon'),
-        jsdom = require('jsdom');
-
-    expect = require('chai').expect;
-
-    GLOBAL.window = jsdom.jsdom(
-         '<html><head></head><body>hello world</body></html>'
-     ).defaultView;
-
-    var JsPackageSample = require('../src/index');
-} else {
-    expect = chai.expect;
-}
-
 describe('JS Package Sample', function() {
     it('setUserAgent function', function() {
         expect(JsPackageSample.setUserAgent('test')).to.equal(undefined);
@@ -40,5 +23,9 @@ describe('JS Package Sample', function() {
             clearInterval(JsPackageSample.getRepeaterId());
             done();
         });
+    });
+
+    it('jQuery has ajax?', function() {
+        expect(jQuery.ajax).to.not.undefined;
     });
 });

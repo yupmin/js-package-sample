@@ -4,13 +4,17 @@
   "description": "Javascript Package Sample",
   "main": "dist/js-package-sample.js",
   "scripts": {
-    "test": "`npm bin`/mocha test",
+    "test": "`npm bin`/testem ci",
+    "test:dev": "`npm bin`/testem",
+    "test:node": "`npm bin`/mocha -r test/setup.js -R tap test/*.test.js",
     "test-travis": "`npm bin`/istanbul cover `npm bin`/_mocha -- -R spec ./test/*",
     "build": "`npm bin`/grunt",
     "clean": "`npm bin`/grunt clean"
   },
   "keywords": [
-    "test"
+    "test",
+    "package",
+    "sample"
   ],
   "author": "yupmin@gmail.com",
   "license": "MIT",
@@ -40,7 +44,8 @@
     "istanbul": "*",
     "jsdom": "*",
     "mocha": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "testem": "*"
   },
   "dependencies": {
     "jquery": "*"

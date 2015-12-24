@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2015
  * js-package-sample - Javascript Package Sample
- * Built on 2015-12-17
+ * Built on 2015-12-24
  * 
  * @version 0.0.5
  * @link https://github.com/yupmin/js-package-sample.git
@@ -23,7 +23,7 @@
     'use strict';
 
     var userAgent,
-        repeaterId;
+        repeater;
 
     return {
         getUserAgent: function() {
@@ -45,11 +45,11 @@
         },
 
         getRepeaterId: function() {
-            return repeaterId;
+            return repeater;
         },
 
         repeaterGetUserAgent: function(cb) {
-            repeaterId = setInterval(function(self) {
+            repeater = setInterval(function(self) {
                 try {
                     cb(null, self.getUserAgent());
                 } catch (err) {

@@ -11,6 +11,7 @@ For web component development, sample package
    - [Chai](http://chaijs.com/)
  - [Sinon](http://sinonjs.org/)
  - [JSDom](https://github.com/tmpvar/jsdom)
+ - [Testem](https://github.com/testem/testem)
 
 ## Coverage tools
  - [istanbul](https://gotwarlost.github.io/istanbul/)
@@ -29,6 +30,18 @@ grunt [command]
 ```
 ### Command
   - watch
-  - test
   - build
   - clean
+  - test
+  - test:dev
+  - test:node
+
+### Testing using testem
+```bash
+`npm bin`\testem launchers
+`npm bin`\testem
+```
+
+### Reference Site
+  - [http://www.kenpowers.net/blog/testing-in-browsers-and-node/](http://www.kenpowers.net/blog/testing-in-browsers-and-node/)
+  - [http://alistapart.com/article/writing-testable-javascript](http://alistapart.com/article/writing-testable-javascript)

@@ -40,12 +40,12 @@ gulp.task('jshint:app', function () {
 });
 
 gulp.task('test', function() {
-    gulp.src(['test/**/*.js'])
+    gulp.src(['test/*.test.js'])
         .pipe(mocha({
             timeout: 3000,
             ignoreLeak: false,
             ui: 'bdd',
-            require: 'test/setup',
+            require: ['./test/setup'],
             reporter: 'spec'
         }));
 });

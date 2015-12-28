@@ -33,7 +33,7 @@
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-simple-mocha": "*",
+    "grunt-mocha-test": "*",
     "gulp": "*",
     "gulp-concat": "*",
     "gulp-header": "*",

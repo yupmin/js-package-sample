@@ -22,7 +22,7 @@ var fs = require('fs'),
         ''].join('\n') + '\n';
 
 gulp.task('jshint:dev', function() {
-    gulp.src(['gulpfile.js', 'tests/**/*.js'])
+    gulp.src(['gulpfile.js', 'test/**/*.js'])
         .pipe(jshint({
             maxlen: 80,
             quotmark: 'single'
@@ -40,8 +40,14 @@ gulp.task('jshint:app', function () {
 });
 
 gulp.task('test', function() {
-    gulp.src(['test/**/*.js'])
-        .pipe(mocha());
+    gulp.src(['test/*.test.js'])
+        .pipe(mocha({
+            timeout: 3000,
+            ignoreLeak: false,
+            ui: 'bdd',
+            require: ['./test/setup'],
+            reporter: 'spec'
+        }));
 });
 
 gulp.task('copy', function() {

@@ -25,28 +25,28 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
+                        cwd: 'node_modules/mocha',
                         src: ['mocha.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
+                        cwd: 'node_modules/mocha',
                         src: ['mocha.css'],
                         dest: 'public/assets/css',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/mocha/',
-                        src: ['mocha.*'],
+                        cwd: 'node_modules/jquery/dist',
+                        src: ['jquery.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/chai/',
+                        cwd: 'node_modules/chai',
                         src: ['chai.js'],
                         dest: 'public/assets/js',
                         filter: 'isFile'
@@ -85,18 +85,16 @@ module.exports = function(grunt) {
                 }
             }
         },
-        simplemocha: {
-            options: {
-                globals: ['expect'],
-                timeout: 3000,
-                ignoreLeak: false,
-                ui: 'bdd',
-                reporter: 'tap'
-            },
-            all: {
-                src: [
-                    'test/*.js'
-                ]
+        mochaTest: {
+            test: {
+                options: {
+                    timeout: 3000,
+                    ignoreLeak: false,
+                    ui: 'bdd',
+                    require: 'test/setup',
+                    reporter: 'spec'
+                },
+                src: ['test/*.test.js']
             }
         },
         watch: {
@@ -113,7 +111,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-simple-mocha');
+    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -124,7 +122,7 @@ module.exports = function(grunt) {
 
     // grunt.registerTask('watch', ['jshint', 'simplemocha']);
 
-    grunt.registerTask('test', ['simplemocha']);
+    grunt.registerTask('test', ['mochaTest']);
 
     grunt.registerTask('build', ['concat', 'uglify']);
 };

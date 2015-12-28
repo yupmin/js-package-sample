@@ -1,0 +1,15 @@
+framework: mocha
+src_files:
+  - public/assets/js/chai.js
+  - public/assets/js/sinon.js
+  - public/assets/js/jquery.js
+  - src/index.js
+  - test/setup.js
+  - test/*.test.js
+launchers:
+  Node:
+    command: 'npm run test:node'
+    protocol: tap
+launch_in_dev:
+  - Node
+  - Chrome
